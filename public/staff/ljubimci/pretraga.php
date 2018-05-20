@@ -3,7 +3,7 @@
 <?php
 
 $current_page = $_GET['page'] ?? 1;
-$per_page = 8;
+$per_page = 20;
 $total_count = Lista::count_all();
 
 $pagination = new Pagination($current_page, $per_page, $total_count);
@@ -21,7 +21,7 @@ $sudije = Lista::find_by_sql($sql);
 <!--
     
 -->
-<?php $page_title = 'Lista ljubimaca'; ?>
+<?php $page_title = 'Pretraga'; ?>
 <?php include(SHARED_PATH . '/public_header2.php'); ?>
 <p>&nbsp</p>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
@@ -55,6 +55,7 @@ $sudije = Lista::find_by_sql($sql);
 <?php
 $searchq = "";
 $searchq1 = "";
+$searchq2 = "";
 $sudije = [];
 
 if(isset($_POST['search'])){
@@ -66,12 +67,15 @@ $sql .= "prezime LIKE '%$searchq%'";
 
     $sudije = Lista::find_by_sql($sql);
 }
-if(isset($_POST['search1'])){
+if(isset($_POST['search1'])&& isset($_POST['search2'])){
 $searchq1 = $_POST['search1'];
 $searchq1 = preg_replace("#[^0-9a-z]#i", "", $searchq1);
+$searchq2 = $_POST['search2'];
+$searchq2 = preg_replace("#[^0-9a-z]#i", "", $searchq2);
 
 $sql = "SELECT * FROM lista WHERE ";
 $sql .= "ime_pet LIKE '%$searchq1%'";
+$sql .= " AND br_cipa LIKE '%$searchq2%'";
 
     $sudije = Lista::find_by_sql($sql);
 }
@@ -105,9 +109,10 @@ echo $pagination->page_links($url);
     </form>
     </div>
     <div>
-    <p>Pretraga po imenu ljubimca</p>
+    <p>Pretraga po imenu ljubimca i broju čipa</p>
     <form action="../ljubimci/pretraga.php" method="post">
         <input type="text" name="search1" placeholder="Ime ljubimca" />
+        <input type="text" name="search2" placeholder="Broj čipa" />
         <input type="submit" value="Potvrdi" />
     </form>
     </div>

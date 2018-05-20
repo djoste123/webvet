@@ -12,9 +12,6 @@ include ('../../../private/sql_query.php');
 ?>
 
 <?php $page_title = 'Pregled: ' . h($pregled->id); ?>
-<?php include(SHARED_PATH . '/public_header2.php'); ?>
-<p>&nbsp</p>
-<?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
 

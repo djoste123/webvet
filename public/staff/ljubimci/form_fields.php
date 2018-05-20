@@ -51,10 +51,6 @@ if(!isset($sudija)) {
   <dd><input type="text" name="sudija[br_pasosa]" value="<?php echo h($sudija->br_pasosa) ?>" /></dd>
 </dl>
 <dl>
-  <dt>Broj potvrde</dt>
-  <dd><input type="text" name="sudija[br_potvrde]" value="<?php echo h($sudija->br_potvrde) ?>" /></dd>
-</dl>
-<dl>
   <dt>Opis</dt>
   <dd><textarea name="sudija[description]" rows="3" cols="60"><?php echo h($sudija->description) ?></textarea></dd>
 </dl>    

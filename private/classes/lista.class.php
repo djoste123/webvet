@@ -4,7 +4,7 @@ class Lista extends DatabaseObject {
     // start of Active Record code
   static protected $table_name = 'lista';
   
-  static protected $db_columns = ['date', 'ime_pet', 'vrsta', 'rasa', 'pol','br_cipa','br_pasosa','br_potvrde','description','ime', 'prezime', 'jmbg', 'br_tel','email', 'adresa'];
+  static protected $db_columns = ['date', 'ime_pet', 'vrsta', 'rasa', 'pol','br_cipa','br_pasosa','description','ime', 'prezime', 'jmbg', 'br_tel','email', 'adresa'];
 
   // public $errors = [];
   
@@ -50,7 +50,6 @@ return $day.".".$month.".".$year.".";
   public $rasa;
   public $br_cipa;
   public $br_pasosa;
-  public $br_potvrde;
   public $ime;
   public $prezime;
   public $jmbg;
@@ -78,7 +77,6 @@ return $day.".".$month.".".$year.".";
     $this->rasa = $args['rasa'] ?? '';
     $this->pol = $args['pol'] ?? '';
     $this->br_cipa = $args['br_cipa'] ?? '';
-    $this->br_pasosa = $args['br_pasosa'] ?? '';
     $this->br_potvrde = $args['br_potvrde'] ?? '';
     $this->description = $args['description'] ?? '';
     $this->ime = $args['ime'] ?? '';

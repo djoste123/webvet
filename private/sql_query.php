@@ -1,7 +1,7 @@
 <?php require_once('../../../private/initialize.php'); ?>
 <?php
 
-$sql = "SELECT ime_pet FROM lista where id=" . $pregled->br_kartona;
+$sql = h("SELECT ime_pet FROM lista where id=" . $pregled->br_kartona);
 $lista = Lista::find_by_sql($sql);
 $sql2 = "SELECT ime FROM lista where id=" . $pregled->br_kartona;
 $lista2 = Lista::find_by_sql($sql2);

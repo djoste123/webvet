@@ -33,29 +33,26 @@ $lista = new Lista;
         <dd><?php echo h($lista->euro_date($sudije->date)); ?></dd>
       </dl>
       <dl>
-        <dl>
+      <dl>
         <dt>Ime ljubimca</dt>
         <dd><?php echo h($sudije->ime_pet); ?></dd>
       </dl>
-        <dl>
+      <dl>
         <dt>Vrsta</dt>
         <dd><?php echo h($sudije->vrsta); ?></dd>
       </dl>
-          <dl>
+       <dl>
         <dt>Rasa</dt>
         <dd><?php echo h($sudije->rasa); ?></dd>
       </dl>
       <dl>
-          <dl>
+       <dl>
         <dt>Broj čipa</dt>
         <dd><?php echo h($sudije->br_cipa); ?></dd>
       </dl>
-          <dl>
+       <dl>
         <dt>Broj pasoša</dt>
         <dd><?php echo h($sudije->br_pasosa); ?></dd>
-      </dl>
-          <dt>Broj potvrde</dt>
-        <dd><?php echo h($sudije->br_potvrde); ?></dd>
       </dl>
           <dl>
         <dt>Opis</dt>

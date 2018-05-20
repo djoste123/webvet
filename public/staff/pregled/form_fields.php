@@ -35,3 +35,16 @@ if(!isset($pregled)) {
   <dt>Cena</dt>
   <dd><input type="text" name="pregled[cena]" value="<?php echo h($pregled->cena); ?>" /></dd>
 </dl>
+<dl>
+    <!--
+  <dt>Vezba</dt>
+  <dd>
+    <select name="pregled[br_kartona]">
+      <option value=""></option>
+    <?php //foreach(Pregled::BR_KARTONA as $br_kart => $ime) { ?>
+      <option value="<?php echo $br_kart; ?>"<?php if($pregled->br_kartona == $br_kart) { echo 'selected'; } ?>><?php echo $ime;?></option>
+    <?php// } ?>
+    </select>
+  </dd>
+</dl>
+    -->

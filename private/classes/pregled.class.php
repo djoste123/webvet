@@ -13,6 +13,8 @@ class Pregled extends DatabaseObject {
   public $terapija;
   public $cena;
   
+  //const BR_KARTONA = ['Pregled::br_kartona' => 'Lista::ime'];
+
   public function __construct($args=[]) {
     $this->date = $args['date'] ?? '';
     $this->br_kartona = $args['br_kartona'] ?? '';

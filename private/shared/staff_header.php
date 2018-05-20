@@ -6,7 +6,7 @@
 
 <html lang="en">
   <head>
-    <title>WEBWET <?php echo h($page_title); ?></title>
+    <title>WEBVET <?php echo h($page_title); ?></title>
     <meta charset="utf-8">
     <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/staff.css'); ?>" />
     <script type="text/javascript" src="<?php echo url_for('/stylesheets/jquery-3.3.1.js"'); ?>></script>
@@ -24,7 +24,7 @@
 
   <body>
     <header>
-      <h1>WEBWET</h1>
+      <h1>WEBVET</h1>
     </header>
 
     <navigation>

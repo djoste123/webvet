@@ -17,14 +17,11 @@ if(is_post_request()) {
   } else {
     // show errors
   }
-
 } else {
   // display the form
   $pregled = new Pregled;
 }
-
 ?>
-
 <?php $page_title = 'Dodajte pregled'; ?>
 <?php include(SHARED_PATH . '/public_header2.php'); ?>
 <p>&nbsp</p>
