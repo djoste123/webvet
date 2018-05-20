@@ -11,4 +11,8 @@ $sql4 = "SELECT br_tel FROM lista where id=" . $pregled->br_kartona;
 $lista4 = Lista::find_by_sql($sql4);
 $sql5 = "SELECT adresa FROM lista where id=" . $pregled->br_kartona;
 $lista5 = Lista::find_by_sql($sql5);
+$sql6 = "SELECT vrsta FROM lista where id=" . $pregled->br_kartona;
+$lista6 = Lista::find_by_sql($sql6);
+$sql7 = "SELECT rasa FROM lista where id=" . $pregled->br_kartona;
+$lista7 = Lista::find_by_sql($sql7);
 

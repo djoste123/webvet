@@ -27,24 +27,28 @@ if(!isset($pregled)) {
 </dl>
 
 <dl>
-  <dt>Terapija</dt>
-  <dd><textarea name="pregled[terapija]" rows="4" cols="60"><?php echo h($pregled->terapija) ?></textarea></dd>
+  <dt>Terapija/Cena</dt>
+  <dd><input type="text" name="pregled[terapija]" value="<?php echo h($pregled->terapija); ?>" /></dd>
+  <dd><input type="text" name="pregled[cena]" value="<?php echo h($pregled->cena); ?>" /></dd>
 </dl>
 
 <dl>
-  <dt>Cena</dt>
-  <dd><input type="text" name="pregled[cena]" value="<?php echo h($pregled->cena); ?>" /></dd>
+  <dt>Terapija/Cena</dt>
+  <dd><input type="text" name="pregled[terapija1]" value="<?php echo h($pregled->terapija1); ?>" /></dd>
+  <dd><input type="text" name="pregled[cena1]" value="<?php echo h($pregled->cena1); ?>" /></dd>
 </dl>
 <dl>
-    <!--
-  <dt>Vezba</dt>
-  <dd>
-    <select name="pregled[br_kartona]">
-      <option value=""></option>
-    <?php //foreach(Pregled::BR_KARTONA as $br_kart => $ime) { ?>
-      <option value="<?php echo $br_kart; ?>"<?php if($pregled->br_kartona == $br_kart) { echo 'selected'; } ?>><?php echo $ime;?></option>
-    <?php// } ?>
-    </select>
-  </dd>
+  <dt>Terapija/Cena</dt>
+  <dd><input type="text" name="pregled[terapija2]" value="<?php echo h($pregled->terapija2); ?>" /></dd>
+  <dd><input type="text" name="pregled[cena2]" value="<?php echo h($pregled->cena2); ?>" /></dd>
 </dl>
-    -->
+<dl>
+  <dt>Terapija/Cena</dt>
+  <dd><input type="text" name="pregled[terapija3]" value="<?php echo h($pregled->terapija3); ?>" /></dd>
+  <dd><input type="text" name="pregled[cena3]" value="<?php echo h($pregled->cena3); ?>" /></dd>
+</dl>
+<dl>
+  <dt>Terapija/Cena</dt>
+  <dd><input type="text" name="pregled[terapija4]" value="<?php echo h($pregled->terapija4); ?>" /></dd>
+  <dd><input type="text" name="pregled[cena4]" value="<?php echo h($pregled->cena4); ?>" /></dd>
+</dl>

@@ -3,7 +3,7 @@
 class Pregled extends DatabaseObject {
 
   static protected $table_name = "pregled";
-  static protected $db_columns = ['id', 'date', 'br_kartona', 'anamneza', 'dijagnoza', 'terapija','cena'];
+  static protected $db_columns = ['id', 'date', 'br_kartona', 'anamneza', 'dijagnoza', 'terapija','cena','terapija1','cena1','terapija2','cena2','terapija3','cena3','terapija4','cena4'];
 
   public $id;
   public $date;
@@ -12,6 +12,8 @@ class Pregled extends DatabaseObject {
   public $dijagnoza;
   public $terapija;
   public $cena;
+  public $terapija1;
+  public $cena1;
   
   //const BR_KARTONA = ['Pregled::br_kartona' => 'Lista::ime'];
 
@@ -21,9 +23,22 @@ class Pregled extends DatabaseObject {
     $this->anamneza = $args['anamneza'] ?? '';
     $this->dijagnoza = $args['dijagnoza'] ?? '';
     $this->terapija = $args['terapija'] ?? '';
-    $this->cena = $args['cena'] ?? '';   
+    $this->cena = $args['cena'] ?? '';
+    $this->terapija1 = $args['terapija1'] ?? '';
+    $this->cena1 = $args['cena1'] ?? '';
+    $this->terapija2 = $args['terapija2'] ?? '';
+    $this->cena2 = $args['cena2'] ?? '';
+    $this->terapija3 = $args['terapija3'] ?? '';
+    $this->cena3 = $args['cena3'] ?? '';
+    $this->terapija4 = $args['terapija4'] ?? '';
+    $this->cena4 = $args['cena4'] ?? '';
   }
-public function euro_date($val){
+  
+  public function sum(){
+      return $this->cena + $this->cena1 + $this->cena2 + $this->cena3 + $this->cena4; 
+  }
+
+  public function euro_date($val){
 $day = substr($val, -2);
 $month = substr($val, -5, 2);
 $year = substr($val, -(strlen($val)), 4);
