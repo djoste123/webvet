@@ -15,12 +15,14 @@ if(!isset($pregled)) {
   <dt>Broj kartona</dt>
   <dd><input type="text" name="pregled[br_kartona]" value="<?php echo h($pregled->br_kartona); ?>" /></dd>
 </dl>
-
 <dl>
   <dt>Anamneza</dt>
   <dd><textarea name="pregled[anamneza]" rows="4" cols="60"><?php echo h($pregled->anamneza) ?></textarea></dd>
 </dl>
-
+<dl>
+  <dt>Klinički pregled</dt>
+  <dd><textarea name="pregled[klin_pregled]" rows="4" cols="60"><?php echo h($pregled->klin_pregled) ?></textarea></dd>
+</dl>
 <dl>
   <dt>Dijagnoza</dt>
   <dd><textarea name="pregled[dijagnoza]" rows="4" cols="60"><?php echo h($pregled->dijagnoza) ?></textarea></dd>

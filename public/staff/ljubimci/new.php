@@ -6,13 +6,13 @@ require_login() ;
 if(is_post_request()) {
 
   // Create record using post parameters
-  $args = $_POST['sudija'];
+  $args = $_POST['ljubimac'];
 
-  $sudija = new Lista($args);
-  $result = $sudija->save();
+  $ljubimac = new Lista($args);
+  $result = $ljubimac->save();
   
   if($result === true) {
-    $new_id = $sudija->id;
+    $new_id = $ljubimac->id;
     $_SESSION['message'] = 'Podaci su uneti uspešno';
     redirect_to(url_for('/staff/ljubimci/show.php?id=' . $new_id));
   } else {
@@ -21,7 +21,7 @@ if(is_post_request()) {
 
 } else {
   // display the form
-  $sudija = new Lista;
+  $ljubimac = new Lista;
 }
 
 ?>
@@ -38,7 +38,7 @@ if(is_post_request()) {
   <div class="bicycle new">
     <h1>Dodajte karton ljubimca</h1>
 
-    <?php echo display_errors($sudija->errors); ?>
+    <?php echo display_errors($ljubimac->errors); ?>
 
     <form action="<?php echo url_for('/staff/ljubimci/new.php'); ?>" method="post">
 

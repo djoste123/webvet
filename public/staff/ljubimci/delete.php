@@ -7,15 +7,15 @@ if(!isset($_GET['id'])) {
   redirect_to(url_for('/staff/ljubimci/index.php'));
 }
 $id = $_GET['id'];
-$sudija = Lista::find_by_id($id);
-  if($sudija == false){
+$ljubimac = Lista::find_by_id($id);
+  if($ljubimac == false){
       redirect_to(url_for('/staff/ljubimci/index.php'));
   }
   
 if(is_post_request()) {
 
   // Delete bicycle
-  $result = $sudija->delete();
+  $result = $ljubimac->delete();
   $_SESSION['message'] = 'Ljubimac je izbrisan uspešno.';
   redirect_to(url_for('/staff/ljubimci/index.php'));
 
@@ -37,7 +37,7 @@ $lista = new Lista;
   <div class="bicycle delete">
     <h1>Izbrisati karton ljubimca</h1>
     <p>Da li ste sigurni da želite da izbrišete?</p>
-    <p class="item"><?php echo h($sudija->ime()); ?></p>
+    <p class="item"><?php echo h($ljubimac->ime()); ?></p>
 
     <form action="<?php echo url_for('/staff/ljubimci/delete.php?id=' . h(u($id))); ?>" method="post">
       <div id="operations">

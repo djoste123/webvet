@@ -4,22 +4,24 @@
 <?php
 
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
-
 $pregled = Pregled::find_by_id($id);
-
 include ('../../../private/sql_query.php');  
 
 ?>
 
 <?php $page_title = 'Pregled: ' . h($pregled->id); ?>
+<?php include(SHARED_PATH . '/public_header3.php'); ?>
+<p>&nbsp</p>
+<?php include(SHARED_PATH . '/staff_header1.php'); ?>
 
 <div id="content">
-
-  <a class="back-link" href="<?php echo url_for('/staff/pregled/index.php'); ?>">&laquo; Povratak na listu</a>
-
   <div class="admin show">
-
-    <h1>Pregled: <?php echo h($pregled->id); ?></h1>
+      <h1>&nbsp;</h1>
+      <h1>&nbsp;</h1>
+      <h1>&nbsp;</h1>
+      <h1>&nbsp;</h1>
+      <h1>&nbsp;</h1>
+      <h1>&nbsp;</h1>
 
     <div class="attributes">
       <dl>
@@ -30,29 +32,25 @@ include ('../../../private/sql_query.php');
         <dt>Broj kartona</dt>
         <dd><?php echo h($pregled->br_kartona); ?></dd>
       </dl>
-      <dl>
-        <dt>Anamneza</dt>
-        <dd><?php echo h($pregled->anamneza); ?></dd>
-      </dl>
-      <dl>
-        <dt>Dijagnoza</dt>
-        <dd><?php echo h($pregled->dijagnoza); ?></dd>
-      </dl>
-        <dl>
-        <dt>Terapija</dt>
-        <dd><?php echo h($pregled->terapija); ?></dd>
-      </dl>
-        <dl>
-        <dt>Cena</dt>
-        <dd><?php echo h($pregled->cena); ?></dd>
-      </dl>
-        <?php foreach($lista as $liste) { ?>
+       <?php foreach($lista as $liste) { ?>
         <dl>
         <dt>Ime ljubimca</dt>
         <dd><?php echo h($liste->ime_pet); ?></dd>
       </dl>
-        <h3>Podaci o vlasniku</h3>
       <?php } ?>
+      <?php foreach($lista6 as $liste) { ?>
+        <dl>
+        <dt>Vrsta</dt>
+        <dd><?php echo h($liste->vrsta); ?></dd>
+      </dl>
+      <?php } ?>
+      <?php foreach($lista7 as $liste) { ?>
+        <dl>
+        <dt>Rasa</dt>
+        <dd><?php echo h($liste->rasa); ?></dd>
+      </dl>
+      <?php } ?>
+          <h4>Podaci o vlasniku</h4>
         <?php foreach($lista2 as $liste) { ?>
         <dl>
         <dt>Ime</dt>
@@ -76,9 +74,58 @@ include ('../../../private/sql_query.php');
         <dt>Broj telefona</dt>
         <dd><?php echo h($liste->br_tel); ?></dd>
       </dl>
-      <?php } ?>
+      <?php } ?>  
+          <dl>
+        <dt>Anamneza</dt>
+        <dd><?php echo h($pregled->anamneza); ?></dd>
+      </dl>
+          <dl>
+        <dt>Klinički pregled</dt>
+        <dd><?php echo h($pregled->klin_pregled); ?></dd>
+      </dl>
+      <dl>
+        <dt>Dijagnoza</dt>
+        <dd><?php echo h($pregled->dijagnoza); ?></dd>
+      </dl>
+        
+        <table class="list">
+      <tr>
+        <th>Terapija</th>
+        <th>Cena</th>
+      </tr>
+        <tr>
+          <td><?php echo h($pregled->terapija); ?></td>
+          <td><?php echo h($pregled->cena); ?></td>
+    	  </tr>
+          <?php if($pregled->terapija1 != "" ) {?>
+          <tr>
+          <td><?php echo h($pregled->terapija1); ?></td>
+          <td><?php echo h($pregled->cena1); ?></td>
+          </tr>
+          <?php } ?> 
+           <?php if($pregled->terapija2 != "" ) {?>
+          <tr>
+          <td><?php echo h($pregled->terapija2); ?></td>
+          <td><?php echo h($pregled->cena2); ?></td>
+          </tr>
+          <?php } ?> 
+          <?php if($pregled->terapija3 != "" ) {?>
+          <tr>
+          <td><?php echo h($pregled->terapija3); ?></td>
+          <td><?php echo h($pregled->cena3); ?></td>
+          </tr>
+          <?php } ?> 
+          <?php if($pregled->terapija4 != "" ) {?>
+          <tr>
+          <td><?php echo h($pregled->terapija4); ?></td>
+          <td><?php echo h($pregled->cena4); ?></td>
+          </tr>
+          <?php } ?> 
+          <tr>
+          <td class="bold" >Ukupno: </td>
+          <td class="bold1"><?php echo h($pregled->sum().".00"); ?></td>
+    	  </tr>
+  	</table>
     </div>
-
   </div>
-
 </div>

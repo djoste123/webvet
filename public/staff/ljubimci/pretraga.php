@@ -15,7 +15,7 @@ $pagination = new Pagination($current_page, $per_page, $total_count);
 $sql = "SELECT * FROM lista ";
 $sql .= "LIMIT {$per_page} ";
 $sql .= "OFFSET {$pagination->offset()}";
-$sudije = Lista::find_by_sql($sql);
+$ljubimci = Lista::find_by_sql($sql);
 
 ?>
 <!--
@@ -56,7 +56,7 @@ $sudije = Lista::find_by_sql($sql);
 $searchq = "";
 $searchq1 = "";
 $searchq2 = "";
-$sudije = [];
+$ljubimci = [];
 
 if(isset($_POST['search'])){
 $searchq = $_POST['search'];
@@ -65,7 +65,7 @@ $searchq = preg_replace("#[^0-9a-z]#i", "", $searchq);
 $sql = "SELECT * FROM lista WHERE ";
 $sql .= "prezime LIKE '%$searchq%'";
 
-    $sudije = Lista::find_by_sql($sql);
+    $ljubimci = Lista::find_by_sql($sql);
 }
 if(isset($_POST['search1'])&& isset($_POST['search2'])){
 $searchq1 = $_POST['search1'];
@@ -77,10 +77,10 @@ $sql = "SELECT * FROM lista WHERE ";
 $sql .= "ime_pet LIKE '%$searchq1%'";
 $sql .= " AND br_cipa LIKE '%$searchq2%'";
 
-    $sudije = Lista::find_by_sql($sql);
+    $ljubimci = Lista::find_by_sql($sql);
 }
 ?>
-      <?php foreach($sudije as $sudija) { ?>
+      <?php foreach($ljubimci as $sudija) { ?>
         <tr>
           <td><?php echo h($sudija->id); ?></td>
           <td><?php echo h($sudija->ime_pet); ?></td>

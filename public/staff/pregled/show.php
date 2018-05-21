@@ -4,9 +4,7 @@
 <?php
 
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
-
 $pregled = Pregled::find_by_id($id);
-
 include ('../../../private/sql_query.php');  
 
 ?>
@@ -17,7 +15,9 @@ include ('../../../private/sql_query.php');
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
-<a class="back-link" href="<?php echo url_for('/staff/pregled/index.php'); ?>">&laquo;</a>
+<a class="back-link" href="<?php echo url_for('/staff/pregled/index.php'); ?>">&laquo; Povratak na listu</a>
+<br />
+<a class="back-link" href="<?php echo url_for('/staff/pregled/show_print.php?id=' . h(u($pregled->id))); ?>">&laquo; Verzija za štampu</a>
   <div class="admin show">
 
       <h1>&nbsp;</h1>
@@ -74,9 +74,14 @@ include ('../../../private/sql_query.php');
         <dt>Broj telefona</dt>
         <dd><?php echo h($liste->br_tel); ?></dd>
       </dl>
-      <?php } ?>   
+      <?php } ?>  
+          <dl>
         <dt>Anamneza</dt>
         <dd><?php echo h($pregled->anamneza); ?></dd>
+      </dl>
+          <dl>
+        <dt>Klinički pregled</dt>
+        <dd><?php echo h($pregled->klin_pregled); ?></dd>
       </dl>
       <dl>
         <dt>Dijagnoza</dt>

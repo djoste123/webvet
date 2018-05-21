@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en">
+
   <head>
     <title>WEBVET <?php if(isset($page_title)) { echo '- ' . h($page_title); } ?></title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -14,12 +14,3 @@
         });
     </script>
   </head>
-
-  <body>
-    <header>
-      <h1>
-        <a href="<?php echo url_for('/index.php'); ?>">
-          <img class="bike-icon" src="<?php echo url_for('/images/cat-dog-man.png') ?>" />
-        </a>
-      </h1>
-    </header>

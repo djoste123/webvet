@@ -91,13 +91,11 @@ table.list tr th {
 }
 
 td.bold {
-    font-style: italic;
     text-align: right;
     font-weight: bold;
     
 }
 td.bold1 {
-    font-style: italic;
     text-align: left;
     font-weight: bold;
     

@@ -7,18 +7,18 @@ if(!isset($_GET['id'])) {
   redirect_to(url_for('/staff/ljubimci/index.php'));
 }
 $id = $_GET['id'];
-$sudija = Lista::find_by_id($id);
-  if($sudija == false){
+$ljubimac = Lista::find_by_id($id);
+  if($ljubimac == false){
       redirect_to(url_for('/staff/ljubimci/index.php'));
   }
 
 if(is_post_request()) {
 
   // Save record using post parameters
-  $args = $_POST['sudija'];
+  $args = $_POST['ljubimac'];
   
-  $sudija->merge_attributes($args);
-  $result = $sudija->save();
+  $ljubimac->merge_attributes($args);
+  $result = $ljubimac->save();
 
   if($result === true) {
     $_SESSION['message'] = 'Upis ljubimca je urađen uspešno';
@@ -47,7 +47,7 @@ if(is_post_request()) {
   <div class="bicycle edit">
     <h1>Izmeni podatke</h1>
 
-    <?php echo display_errors($sudija->errors); ?>
+    <?php echo display_errors($ljubimac->errors); ?>
 
     <form action="<?php echo url_for('/staff/ljubimci/edit.php?id=' . h(u($id))); ?>" method="post">
 

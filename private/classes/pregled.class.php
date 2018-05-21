@@ -3,24 +3,30 @@
 class Pregled extends DatabaseObject {
 
   static protected $table_name = "pregled";
-  static protected $db_columns = ['id', 'date', 'br_kartona', 'anamneza', 'dijagnoza', 'terapija','cena','terapija1','cena1','terapija2','cena2','terapija3','cena3','terapija4','cena4'];
+  static protected $db_columns = ['id', 'date', 'br_kartona', 'anamneza','klin_pregled', 'dijagnoza', 'terapija','cena','terapija1','cena1','terapija2','cena2','terapija3','cena3','terapija4','cena4'];
 
   public $id;
   public $date;
   public $br_kartona;
   public $anamneza;
+  public $klin_pregled;
   public $dijagnoza;
   public $terapija;
   public $cena;
   public $terapija1;
   public $cena1;
-  
-  //const BR_KARTONA = ['Pregled::br_kartona' => 'Lista::ime'];
+  public $terapija2;
+  public $cena2;
+  public $terapija3;
+  public $cena3;
+  public $terapija4;
+  public $cena4;
 
   public function __construct($args=[]) {
     $this->date = $args['date'] ?? '';
     $this->br_kartona = $args['br_kartona'] ?? '';
     $this->anamneza = $args['anamneza'] ?? '';
+    $this->klin_pregled = $args['klin_pregled'] ?? '';
     $this->dijagnoza = $args['dijagnoza'] ?? '';
     $this->terapija = $args['terapija'] ?? '';
     $this->cena = $args['cena'] ?? '';
