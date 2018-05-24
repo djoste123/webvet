@@ -5,11 +5,11 @@
 
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
 
-$sudije = Lista::find_by_id($id);
+$liste = Lista::find_by_id($id);
 $lista = new Lista;
 ?>
 
-<?php $page_title = 'Prikaži: ' . h($sudije->ime()); ?>
+<?php $page_title = 'Prikaži: ' . h($liste->ime()); ?>
 <?php include(SHARED_PATH . '/public_header2.php'); ?>
 <p>&nbsp</p>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
@@ -20,72 +20,72 @@ $lista = new Lista;
 
   <div class="bicycle show">
 
-    <h3>Ljubimac: <?php echo h($sudije->ime()); ?></h3>
+    <h3>Ljubimac: <?php echo h($liste->ime()); ?></h3>
 
     <div class="attributes">
       <dl>
         <dt>Broj kartona</dt>
-        <dd><?php echo h($sudije->id); ?></dd>
+        <dd><?php echo h($liste->id); ?></dd>
       </dl>
       <dl>
       <dl>
         <dt>Datum</dt>
-        <dd><?php echo h($lista->euro_date($sudije->date)); ?></dd>
+        <dd><?php echo h($lista->euro_date($liste->date)); ?></dd>
       </dl>
       <dl>
       <dl>
         <dt>Ime ljubimca</dt>
-        <dd><?php echo h($sudije->ime_pet); ?></dd>
+        <dd><?php echo h($liste->ime_pet); ?></dd>
       </dl>
       <dl>
         <dt>Vrsta</dt>
-        <dd><?php echo h($sudije->vrsta); ?></dd>
+        <dd><?php echo h($liste->vrsta); ?></dd>
       </dl>
        <dl>
         <dt>Rasa</dt>
-        <dd><?php echo h($sudije->rasa); ?></dd>
+        <dd><?php echo h($liste->rasa); ?></dd>
       </dl>
       <dl>
        <dl>
         <dt>Broj čipa</dt>
-        <dd><?php echo h($sudije->br_cipa); ?></dd>
+        <dd><?php echo h($liste->br_cipa); ?></dd>
       </dl>
        <dl>
         <dt>Broj pasoša</dt>
-        <dd><?php echo h($sudije->br_pasosa); ?></dd>
+        <dd><?php echo h($liste->br_pasosa); ?></dd>
       </dl>
           <dl>
         <dt>Opis</dt>
-        <dd><?php echo h($sudije->description); ?></dd>
+        <dd><?php echo h($liste->description); ?></dd>
       </dl>
           <h4>Podaci vlasnika</h4>
       <dl>
         <dt>Ime</dt>
-        <dd><?php echo h($sudije->ime); ?></dd>
+        <dd><?php echo h($liste->ime); ?></dd>
       </dl>
       <dl>
         <dt>Prezime</dt>
-        <dd><?php echo h($sudije->prezime); ?></dd>
+        <dd><?php echo h($liste->prezime); ?></dd>
       </dl>
       <dl>
         <dt>JMBG</dt>
-        <dd><?php echo h($sudije->jmbg); ?></dd>
+        <dd><?php echo h($liste->jmbg); ?></dd>
       </dl>
       <dl>
         <dt>Broj telefona</dt>
-        <dd><?php echo h($sudije->br_tel); ?></dd>
+        <dd><?php echo h($liste->br_tel); ?></dd>
       </dl>
           <dl>
         <dt>E-mail</dt>
-        <dd><?php echo h($sudije->email); ?></dd>
+        <dd><?php echo h($liste->email); ?></dd>
       </dl>
       <dl>
         <dt>Adresa</dt>
-        <dd><?php echo h($sudije->adresa); ?></dd>
+        <dd><?php echo h($liste->adresa); ?></dd>
       </dl>
     </div>
     <?php
-    $sql = "SELECT * FROM pregled WHERE br_kartona={$sudije->id} ORDER BY date DESC";
+    $sql = "SELECT * FROM pregled WHERE br_kartona={$liste->id} ORDER BY date DESC";
     $pregledi = Pregled::find_by_sql($sql);
     ?>
     <div id="content">
@@ -112,7 +112,7 @@ $lista = new Lista;
           <td><?php echo h($pregled->id); ?></td>
           <td><?php echo h($pregled->euro_date($pregled->date)); ?></td>
           <td><?php echo h($pregled->br_kartona); ?></td>
-          <td><?php echo h($pregled->sum()); ?></td>
+          <td><?php echo h($pregled->sum(). ".00"); ?></td>
           <td><a class="action" href="<?php echo url_for('/staff/pregled/show.php?id=' . h(u($pregled->id))); ?>">Detalji</a></td>
           <td><a class="action" href="<?php echo url_for('/staff/pregled/edit.php?id=' . h(u($pregled->id))); ?>">Promeni</a></td>
           <td><a class="action" href="<?php echo url_for('/staff/pregled/delete.php?id=' . h(u($pregled->id))); ?>">Izbriši</a></td>
