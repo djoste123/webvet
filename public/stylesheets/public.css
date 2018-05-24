@@ -15,7 +15,7 @@ body {
 }
 
 header {
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0;
   text-align: left;
@@ -60,7 +60,7 @@ img#super-hero-image {
 
 footer {
   clear: both;
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 10px;
   background-color: #FFFFFF;

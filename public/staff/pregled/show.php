@@ -17,7 +17,7 @@ include ('../../../private/sql_query.php');
 <div id="content">
 <a class="back-link" href="<?php echo url_for('/staff/pregled/index.php'); ?>">&laquo; Povratak na listu</a>
 <br />
-<a class="back-link" href="<?php echo url_for('/staff/pregled/show_print.php?id=' . h(u($pregled->id))); ?>">&laquo; Verzija za štampu</a>
+<a class="back-link" href="<?php echo url_for('/staff/pregled/show_print.php?id=' . h(u($pregled->id))); ?>" target="_blank">&laquo; Verzija za štampu</a>
   <div class="admin show">
 
       <h1>&nbsp;</h1>
