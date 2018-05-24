@@ -80,20 +80,20 @@ $sql .= " AND br_cipa LIKE '%$searchq2%'";
     $ljubimci = Lista::find_by_sql($sql);
 }
 ?>
-      <?php foreach($ljubimci as $sudija) { ?>
+      <?php foreach($ljubimci as $ljubimac) { ?>
         <tr>
-          <td><?php echo h($sudija->id); ?></td>
-          <td><?php echo h($sudija->ime_pet); ?></td>
-          <td><?php echo h($sudija->vrsta); ?></td>
-          <td><?php echo h($sudija->rasa); ?></td>
-          <td><?php echo h($sudija->pol()); ?></td>
-          <td><?php echo h($sudija->br_cipa); ?></td>
-          <td><?php echo h($sudija->ime); ?></td>
-          <td><?php echo h($sudija->prezime); ?></td>
-          <td><?php echo h($sudija->br_tel); ?></td>
-          <td><a class="action" href="<?php echo url_for('/staff/ljubimci/show.php?id=' . h(u($sudija->id))); ?>">Detalji</a></td>
-          <td><a class="action" href="<?php echo url_for('/staff/ljubimci/edit.php?id=' . h(u($sudija->id))); ?>">Promeni</a></td>
-          <td><a class="action" href="<?php echo url_for('/staff/ljubimci/delete.php?id=' . h(u($sudija->id))); ?>">Izbriši</a></td>
+          <td><?php echo h($ljubimac->id); ?></td>
+          <td><?php echo h($ljubimac->ime_pet); ?></td>
+          <td><?php echo h($ljubimac->vrsta); ?></td>
+          <td><?php echo h($ljubimac->rasa); ?></td>
+          <td><?php echo h($ljubimac->pol()); ?></td>
+          <td><?php echo h($ljubimac->br_cipa); ?></td>
+          <td><?php echo h($ljubimac->ime); ?></td>
+          <td><?php echo h($ljubimac->prezime); ?></td>
+          <td><?php echo h($ljubimac->br_tel); ?></td>
+          <td><a class="action" href="<?php echo url_for('/staff/ljubimci/show.php?id=' . h(u($ljubimac->id))); ?>">Detalji</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/ljubimci/edit.php?id=' . h(u($ljubimac->id))); ?>">Promeni</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/ljubimci/delete.php?id=' . h(u($ljubimac->id))); ?>">Izbriši</a></td>
     	  </tr>
       <?php } ?>
   	</table>

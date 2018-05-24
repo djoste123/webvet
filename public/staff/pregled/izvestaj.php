@@ -32,11 +32,7 @@ $pregledi = Pregled::find_by_sql($sql);
 
 <div id="content">
   <div class="admins listing">
-    <h1>Pregledi</h1>
-
-    <div class="actions">
-      <a class="action" href="<?php echo url_for('/staff/pregled/new.php'); ?>">Dodajte pregled</a>
-    </div>
+    <h1>Izveštaj</h1>
 
   	<table class="list">
       <tr>
@@ -49,7 +45,27 @@ $pregledi = Pregled::find_by_sql($sql);
         <th>&nbsp;</th>
         <th>&nbsp;</th>
       </tr>
+<?php
+$searchq = "";
+$searchq1 = "";
+$searchq2 = "";
+$pregledi = [];
 
+
+if(isset($_POST['search1'])&& isset($_POST['search2'])){
+$searchq1 = $_POST['search1'];
+$searchq1 = preg_replace("#[^0-9a-z]#i", "", $searchq1);
+$searchq2 = $_POST['search2'];
+$searchq2 = preg_replace("#[^0-9a-z]#i", "", $searchq2);
+
+$sql = "SELECT * FROM pregled WHERE date ";
+$sql .= "between '$searchq1'";
+$sql .= " AND '$searchq2'";
+$sql .= " ORDER by date DESC";
+
+    $pregledi = Pregled::find_by_sql($sql);
+}
+?>
       <?php foreach($pregledi as $pregled) { ?>
         <tr>
           <td><?php echo h($pregled->id); ?></td>
@@ -63,7 +79,14 @@ $pregledi = Pregled::find_by_sql($sql);
     	  </tr>
       <?php } ?>
   	</table>
-
+    <div>
+    <p>Izveštaj u vremenskom periodu</p>
+    <form action="../pregled/izvestaj.php" method="post">
+        <input type="text" name="search1" placeholder="Od datuma" />
+        <input type="text" name="search2" placeholder="Do datuma" />
+        <input type="submit" value="Potvrdi" />
+    </form>
+    </div>
   </div>
 
 </div>
