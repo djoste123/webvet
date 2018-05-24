@@ -22,6 +22,8 @@ include ('../../../private/sql_query.php');
       <h1>&nbsp;</h1>
       <h1>&nbsp;</h1>
       <h1>&nbsp;</h1>
+      <h1>&nbsp;</h1>
+      <h1>&nbsp;</h1>
 
     <div class="attributes">
       <dl>
@@ -74,7 +76,8 @@ include ('../../../private/sql_query.php');
         <dt>Broj telefona</dt>
         <dd><?php echo h($liste->br_tel); ?></dd>
       </dl>
-      <?php } ?>  
+      <?php } ?>
+          <br />
           <dl>
         <dt>Anamneza</dt>
         <dd><?php echo h($pregled->anamneza); ?></dd>
@@ -87,7 +90,7 @@ include ('../../../private/sql_query.php');
         <dt>Dijagnoza</dt>
         <dd><?php echo h($pregled->dijagnoza); ?></dd>
       </dl>
-        
+          <br />
         <table class="list">
       <tr>
         <th>Terapija</th>
