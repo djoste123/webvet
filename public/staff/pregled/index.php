@@ -12,7 +12,7 @@ if(!$session->is_logged_in()){
 <?php
 
 $current_page = $_GET['page'] ?? 1;
-$per_page = 8;
+$per_page = 20;
 $total_count = Pregled::count_all();
 
 $pagination = new Pagination($current_page, $per_page, $total_count);
@@ -63,6 +63,10 @@ $pregledi = Pregled::find_by_sql($sql);
     	  </tr>
       <?php } ?>
   	</table>
+    <?php
+$url = url_for('/staff/pregled/index.php');
+echo $pagination->page_links($url);
+?>
 
   </div>
 
