@@ -1,6 +1,5 @@
 <?php require_once('../../../private/initialize.php'); ?>
 <?php require_login() ; ?>
-
 <?php 
 if(!$session->is_logged_in()){
     redirect_to(url_for('/staff/login.php'));
@@ -8,24 +7,20 @@ if(!$session->is_logged_in()){
     //Do nothing
 }
 ?>
-
 <?php
-
+/*
 $current_page = $_GET['page'] ?? 1;
 $per_page = 8;
 $total_count = Pregled::count_all();
-
 $pagination = new Pagination($current_page, $per_page, $total_count);
-
 $sql = "SELECT * FROM pregled ";
 $sql .= "ORDER by date DESC ";
 $sql .= "LIMIT {$per_page} ";
 $sql .= "OFFSET {$pagination->offset()}";
-
 $pregledi = Pregled::find_by_sql($sql);
-
+*/
 ?>
-<?php $page_title = 'Pregled'; ?>
+<?php $page_title = 'Izveštaj'; ?>
 <?php include(SHARED_PATH . '/public_header2.php'); ?>
 <p>&nbsp</p>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
@@ -33,7 +28,6 @@ $pregledi = Pregled::find_by_sql($sql);
 <div id="content">
   <div class="admins listing">
     <h1>Izveštaj</h1>
-
   	<table class="list">
       <tr>
         <th>ID</th>
@@ -50,7 +44,7 @@ $searchq = "";
 $searchq1 = "";
 $searchq2 = "";
 $pregledi = [];
-
+$total = "";
 
 if(isset($_POST['search1'])&& isset($_POST['search2'])){
 $searchq1 = $_POST['search1'];
@@ -62,6 +56,10 @@ $sql = "SELECT * FROM pregled WHERE date ";
 $sql .= "between '$searchq1'";
 $sql .= " AND '$searchq2'";
 $sql .= " ORDER by date DESC";
+
+include ('../../../private/sql_query_sum.php');
+
+$total = $qty + $qty1 + $qty2 + $qty3 + $qty4;
 
     $pregledi = Pregled::find_by_sql($sql);
 }
@@ -78,6 +76,18 @@ $sql .= " ORDER by date DESC";
           <td><a class="action" href="<?php echo url_for('/staff/pregled/delete.php?id=' . h(u($pregled->id))); ?>">Izbriši</a></td>
     	  </tr>
       <?php } ?>
+          <?php if($total != "" ) {?>
+          <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="bold"><?php echo "Ukupno: "; ?></td>
+          <td class="bold1"><?php echo h($total .".00"); ?></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+    	  </tr>
+          <?php } ?>
   	</table>
     <div>
     <p>Izveštaj u vremenskom periodu</p>

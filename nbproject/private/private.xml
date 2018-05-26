@@ -3,15 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/webvet/private/initialize.php</file>
-            <file>file:/C:/xampp/htdocs/webvet/public/staff/pregled/show_print.php</file>
             <file>file:/C:/xampp/htdocs/webvet/public/staff/pregled/show.php</file>
-            <file>file:/C:/xampp/htdocs/webvet/public/staff/ljubimci/show.php</file>
-            <file>file:/C:/xampp/htdocs/webvet/private/classes/pregled.class.php</file>
             <file>file:/C:/xampp/htdocs/webvet/public/staff/pregled/izvestaj.php</file>
-            <file>file:/C:/xampp/htdocs/webvet/private/classes/admin.class.php</file>
-            <file>file:/C:/xampp/htdocs/webvet/public/staff/pregled/new.php</file>
-            <file>file:/C:/xampp/htdocs/webvet/public/staff/index.php</file>
+            <file>file:/C:/xampp/htdocs/webvet/private/sql_query_sum.php</file>
         </group>
     </open-files>
 </project-private>
