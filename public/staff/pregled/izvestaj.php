@@ -80,7 +80,7 @@ $total = $qty + $qty1 + $qty2 + $qty3 + $qty4;
           <tr>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td>&nbsp;</td> 
           <td class="bold"><?php echo "Ukupno: "; ?></td>
           <td class="bold1"><?php echo h($total .".00"); ?></td>
           <td>&nbsp;</td>

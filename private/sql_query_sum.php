@@ -1,5 +1,6 @@
 <?php require_once('../../../private/initialize.php'); ?>
 <?php
+//This will make sum in column cena
 $sql10 = "SELECT SUM(cena) AS value_sum FROM pregled";
 $sql10 .=" WHERE date between '$searchq1' and '$searchq2'";
 $result = $database->query($sql10);

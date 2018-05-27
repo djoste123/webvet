@@ -83,45 +83,52 @@ include ('../../../private/sql_query.php');
         <dt>Klinički pregled</dt>
         <dd><?php echo h($pregled->klin_pregled); ?></dd>
       </dl>
-      <dl>
+      <!--<dl>
         <dt>Dijagnoza</dt>
         <dd><?php echo h($pregled->dijagnoza); ?></dd>
-      </dl>
+      </dl>-->
         
         <table class="list">
       <tr>
+        <th>Dijagnoza</th>
         <th>Terapija</th>
         <th>Cena</th>
       </tr>
         <tr>
+          <td><?php echo h($pregled->dijagnoza); ?></td>
           <td><?php echo h($pregled->terapija); ?></td>
           <td><?php echo h($pregled->cena); ?></td>
     	  </tr>
           <?php if($pregled->terapija1 != "" ) {?>
           <tr>
+          <td><?php echo h($pregled->dijagnoza1); ?></td>    
           <td><?php echo h($pregled->terapija1); ?></td>
           <td><?php echo h($pregled->cena1); ?></td>
           </tr>
           <?php } ?> 
            <?php if($pregled->terapija2 != "" ) {?>
           <tr>
+          <td><?php echo h($pregled->dijagnoza2); ?></td>    
           <td><?php echo h($pregled->terapija2); ?></td>
           <td><?php echo h($pregled->cena2); ?></td>
           </tr>
           <?php } ?> 
           <?php if($pregled->terapija3 != "" ) {?>
           <tr>
+          <td><?php echo h($pregled->dijagnoza3); ?></td>    
           <td><?php echo h($pregled->terapija3); ?></td>
           <td><?php echo h($pregled->cena3); ?></td>
           </tr>
           <?php } ?> 
           <?php if($pregled->terapija4 != "" ) {?>
           <tr>
+          <td><?php echo h($pregled->dijagnoza4); ?></td>
           <td><?php echo h($pregled->terapija4); ?></td>
           <td><?php echo h($pregled->cena4); ?></td>
           </tr>
           <?php } ?> 
           <tr>
+              <td>&nbsp;</td>
           <td class="bold" >Ukupno: </td>
           <td class="bold1"><?php echo h($pregled->sum().".00"); ?></td>
     	  </tr>

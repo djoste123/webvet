@@ -3,7 +3,7 @@
 class Pregled extends DatabaseObject {
 
   static protected $table_name = "pregled";
-  static protected $db_columns = ['id', 'date', 'br_kartona', 'anamneza','klin_pregled', 'dijagnoza', 'terapija','cena','terapija1','cena1','terapija2','cena2','terapija3','cena3','terapija4','cena4'];
+  static protected $db_columns = ['id', 'date', 'br_kartona', 'anamneza','klin_pregled', 'dijagnoza', 'terapija','cena','dijagnoza1','terapija1','cena1','dijagnoza2','terapija2','cena2','dijagnoza3','terapija3','cena3','dijagnoza4','terapija4','cena4'];
 
   public $id;
   public $date;
@@ -13,12 +13,16 @@ class Pregled extends DatabaseObject {
   public $dijagnoza;
   public $terapija;
   public $cena;
+  public $dijagnoza1;
   public $terapija1;
   public $cena1;
+  public $dijagnoza2;
   public $terapija2;
   public $cena2;
+  public $dijagnoza3;
   public $terapija3;
   public $cena3;
+  public $dijagnoza4;
   public $terapija4;
   public $cena4;
 
@@ -30,12 +34,16 @@ class Pregled extends DatabaseObject {
     $this->dijagnoza = $args['dijagnoza'] ?? '';
     $this->terapija = $args['terapija'] ?? '';
     $this->cena = $args['cena'] ?? '';
+    $this->dijagnoza1 = $args['dijagnoza1'] ?? '';
     $this->terapija1 = $args['terapija1'] ?? '';
     $this->cena1 = $args['cena1'] ?? '';
+    $this->dijagnoza2 = $args['dijagnoza2'] ?? '';
     $this->terapija2 = $args['terapija2'] ?? '';
     $this->cena2 = $args['cena2'] ?? '';
+    $this->dijagnoza3 = $args['dijagnoza3'] ?? '';
     $this->terapija3 = $args['terapija3'] ?? '';
     $this->cena3 = $args['cena3'] ?? '';
+    $this->dijagnoza4 = $args['dijagnoza4'] ?? '';
     $this->terapija4 = $args['terapija4'] ?? '';
     $this->cena4 = $args['cena4'] ?? '';
   }
