@@ -14,7 +14,7 @@ if($pregled == false) {
 
 if(is_post_request()) {
 
-  // Delete admin
+  // Delete pregled
   $result = $pregled->delete();
   $_SESSION['message'] = 'Uspešno ste izbrisali pregled';
   redirect_to(url_for('/staff/pregled/index.php'));
@@ -35,9 +35,9 @@ if(is_post_request()) {
   <a class="back-link" href="<?php echo url_for('/staff/pregled/index.php'); ?>">&laquo; Back to List</a>
 
   <div class="admin delete">
-    <h1>Izbrišite Admina</h1>
-    <p>Da li ste sigurni da želite da izbiršete?</p>
-    <p class="item"><?php echo h($pregled->id); ?></p>
+    <h1>Izbrišite pregled</h1>
+    <p>Da li ste sigurni da želite da izbrišete?</p>
+    <p class="item"><?php echo "Pregled broj " . h($pregled->id); ?></p>
 
     <form action="<?php echo url_for('/staff/pregled/delete.php?id=' . h(u($id))); ?>" method="post">
       <div id="operations">
