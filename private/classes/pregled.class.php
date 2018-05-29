@@ -52,7 +52,7 @@ class Pregled extends DatabaseObject {
       return $this->cena + $this->cena1 + $this->cena2 + $this->cena3 + $this->cena4; 
   }
   public function ministring($val){
-$mini = substr($val, -(strlen($val)), 25);
+$mini = substr($val, -(strlen($val)), 35);
 return $mini;
 }
 
