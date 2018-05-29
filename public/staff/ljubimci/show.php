@@ -98,24 +98,41 @@ $lista = new Lista;
 
   	<table class="list">
       <tr>
-        <th>ID</th>
+        <!--<th>ID</th>-->
         <th>Datum</th>
         <th>Broj kartona</th>
+        <th>Dijagnoza</th>
         <th>Cena</th>
         <th>&nbsp;</th>
         <th>&nbsp;</th>
-        <th>&nbsp;</th>
+        <!--<th>&nbsp;</th>-->
       </tr>
 
       <?php foreach($pregledi as $pregled) { ?>
         <tr>
-          <td><?php echo h($pregled->id); ?></td>
+          <!--<td><?php echo h($pregled->id); ?></td>-->
           <td><?php echo h($pregled->euro_date($pregled->date)); ?></td>
           <td><?php echo h($pregled->br_kartona); ?></td>
+          <td><?php if($pregled->dijagnoza != ""){
+              echo h($pregled->ministring($pregled->dijagnoza));
+          };
+          if($pregled->dijagnoza1 != ""){
+              echo ", ". h($pregled->ministring($pregled->dijagnoza1));
+          };
+          if($pregled->dijagnoza2 != ""){
+              echo ", ". h($pregled->ministring($pregled->dijagnoza2));
+          };
+          if($pregled->dijagnoza3 != ""){
+              echo ", ". h($pregled->ministring($pregled->dijagnoza3));
+          };
+          if($pregled->dijagnoza4 != ""){
+              echo ", ". h($pregled->ministring($pregled->dijagnoza4));
+          };
+              ?></td>
           <td><?php echo h($pregled->sum(). ".00"); ?></td>
           <td><a class="action" href="<?php echo url_for('/staff/pregled/show.php?id=' . h(u($pregled->id))); ?>">Detalji</a></td>
           <td><a class="action" href="<?php echo url_for('/staff/pregled/edit.php?id=' . h(u($pregled->id))); ?>">Promeni</a></td>
-          <td><a class="action" href="<?php echo url_for('/staff/pregled/delete.php?id=' . h(u($pregled->id))); ?>">Izbriši</a></td>
+          <!--<td><a class="action" href="<?php echo url_for('/staff/pregled/delete.php?id=' . h(u($pregled->id))); ?>">Izbriši</a></td>-->
     	  </tr>
       <?php } ?>
 

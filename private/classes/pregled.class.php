@@ -51,6 +51,10 @@ class Pregled extends DatabaseObject {
   public function sum(){
       return $this->cena + $this->cena1 + $this->cena2 + $this->cena3 + $this->cena4; 
   }
+  public function ministring($val){
+$mini = substr($val, -(strlen($val)), 25);
+return $mini;
+}
 
   public function euro_date($val){
 $day = substr($val, -2);
