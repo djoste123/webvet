@@ -15,7 +15,9 @@ include ('../../../private/sql_query.php');
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
-<a class="back-link" href="<?php echo url_for('/staff/pregled/index.php'); ?>">&laquo; Povratak na listu</a>
+<a class="back-link" href="<?php echo url_for('/staff/pregled/index.php'); ?>">&laquo; Povratak na listu pregleda</a>
+<br />
+<a class="back-link" href="<?php echo url_for('/staff/ljubimci/index.php'); ?>">&laquo; Povratak na listu ljubimaca</a>
 <br />
 <a class="back-link" href="<?php echo url_for('/staff/pregled/show_print.php?id=' . h(u($pregled->id))); ?>" target="_blank">&laquo; Verzija za štampu</a>
   <div class="admin show">

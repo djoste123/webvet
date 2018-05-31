@@ -6,10 +6,7 @@ if(!isset($ljubimac)) {
 }
 ?>
 <?php require_once('../../../private/shared/JQ_header.php'); ?>
-<dl>
-  <dt>Datum</dt>
-  <dd><input type="text" id="datepicker" name="ljubimac[date]" value="<?php echo h($ljubimac->date) ?>" /></dd>
-</dl>
+<!---->
 <p>Podaci ljubimca</p>
 <dl>
   <dt>Ime ljubimca</dt>
@@ -49,6 +46,10 @@ if(!isset($ljubimac)) {
 <dl>
   <dt>Broj pasoša</dt>
   <dd><input type="text" name="ljubimac[br_pasosa]" value="<?php echo h($ljubimac->br_pasosa) ?>" /></dd>
+</dl>
+<dl>
+  <dt>Datum rođenja ljubimca</dt>
+  <dd><input type="text" id="datepicker" name="ljubimac[date]" value="<?php echo h($ljubimac->date) ?>" /></dd>
 </dl>
 <dl>
   <dt>Opis</dt>

@@ -28,12 +28,6 @@ $lista = new Lista;
         <dd><?php echo h($liste->id); ?></dd>
       </dl>
       <dl>
-      <dl>
-        <dt>Datum</dt>
-        <dd><?php echo h($lista->euro_date($liste->date)); ?></dd>
-      </dl>
-      <dl>
-      <dl>
         <dt>Ime ljubimca</dt>
         <dd><?php echo h($liste->ime_pet); ?></dd>
       </dl>
@@ -53,6 +47,10 @@ $lista = new Lista;
        <dl>
         <dt>Broj pasoša</dt>
         <dd><?php echo h($liste->br_pasosa); ?></dd>
+      </dl>
+          <dl>
+        <dt>Datum rođenja ljubimca</dt>
+        <dd><?php echo h($lista->euro_date($liste->date)); ?></dd>
       </dl>
           <dl>
         <dt>Opis</dt>
