@@ -5,7 +5,10 @@
         <group>
             <file>file:/C:/xampp/htdocs/webvet/public/staff/ljubimci/show.php</file>
             <file>file:/C:/xampp/htdocs/webvet/private/classes/pregled.class.php</file>
+            <file>file:/C:/xampp/htdocs/webvet/public/staff/pregled/izvestaj.php</file>
             <file>file:/C:/xampp/htdocs/webvet/public/staff/pregled/delete.php</file>
+            <file>file:/C:/xampp/htdocs/webvet/public/staff/ljubimci/form_fields.php</file>
+            <file>file:/C:/xampp/htdocs/webvet/private/sql_query_sum.php</file>
         </group>
     </open-files>
 </project-private>

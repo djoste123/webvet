@@ -18,5 +18,12 @@
       dateFormat: "yy-mm-dd"   
     });
   } );
+  $( function() {
+    $( "#datepicker1" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: "yy-mm-dd"   
+    });
+  } );
   </script>
 </head>

@@ -7,6 +7,7 @@ if(!$session->is_logged_in()){
     //Do nothing
 }
 ?>
+
 <?php
 /*
 $current_page = $_GET['page'] ?? 1;
@@ -24,6 +25,7 @@ $pregledi = Pregled::find_by_sql($sql);
 <?php include(SHARED_PATH . '/public_header2.php'); ?>
 <p>&nbsp</p>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
+<?php require_once('../../../private/shared/JQ_header.php'); ?>
 
 <div id="content">
   <div class="admins listing">
@@ -107,8 +109,8 @@ $total = $qty + $qty1 + $qty2 + $qty3 + $qty4;
     <div>
     <p>Izveštaj u vremenskom periodu</p>
     <form action="../pregled/izvestaj.php" method="post">
-        <input type="text" name="search1" placeholder="Od datuma" />
-        <input type="text" name="search2" placeholder="Do datuma" />
+        <input type="text" id="datepicker" name="search1" placeholder="Od datuma" />
+        <input type="text" id="datepicker1" name="search2" placeholder="Do datuma" />
         <input type="submit" value="Potvrdi" />
     </form>
     </div>
