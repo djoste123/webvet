@@ -10,12 +10,37 @@ if(!isset($pregled)) {
   <dt>Datum</dt>
   <dd><input type="text" id="datepicker" name="pregled[date]" value="<?php echo h($pregled->date); ?>" /></dd>
 </dl>
+<dl>
+<dt>Broj kartona</dt> 
+<dd>
+<select name="pregled[br_kartona]">
+    <?php
+        $sql = "SELECT * FROM lista";
+        $result = $database->query($sql);
+        if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            //echo $row["id"];
+    
 
+        ?>
+    <option value="<?php echo $row["id"]; ?>"><?php echo $row["id"]; ?></option>
+        <?php 
+        }
+        } 
+        ?>
+</select>
+</dd>
+</dl>
+<!--
+<dl>
+  <dt>Broj kartona test</dt>
+  <dd><input type="text" name="pregled[br_kartona]" value="<?php echo h($pregled->br_kartona); ?>" /></dd>
+</dl>
 <dl>
   <dt>Broj kartona</dt>
   <dd><input type="text" name="pregled[br_kartona]" value="<?php echo h($pregled->br_kartona); ?>" /></dd>
 </dl>
-<dl>
+<dl>-->
   <dt>Anamneza</dt>
   <dd><textarea name="pregled[anamneza]" rows="4" cols="60"><?php echo h($pregled->anamneza) ?></textarea></dd>
 </dl>

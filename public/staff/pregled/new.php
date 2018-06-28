@@ -12,7 +12,7 @@ if(is_post_request()) {
 
   if($result === true) {
     $new_id = $pregled->id;
-    $_SESSION['message'] = 'Article added succesfully';
+    $_SESSION['message'] = 'Uspešno ste dodali pregled';
     redirect_to(url_for('/staff/pregled/show.php?id=' . $new_id));
   } else {
     // show errors
