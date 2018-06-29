@@ -50,7 +50,7 @@ if(is_post_request()) {
 
     <form action="<?php echo url_for('/staff/pregled/edit.php?id=' . h(u($id))); ?>" method="post">
 
-      <?php include('form_fields.php'); ?>
+      <?php include('form_fields_1.php'); ?>
 
       <div id="operations">
         <input type="submit" value="Izmenite" />
